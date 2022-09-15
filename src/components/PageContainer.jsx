@@ -10,14 +10,18 @@ const PageContainer = ({pokemonData}) => {
       setData(pokemonData)
   }, [pokemonData]);
 
-  console.log("pokemonData",pokemonData)
-  console.log("data",data)
+  const handlerFilterAToZ = (data) => {
+    setData(data.sort());
+  }
+  const handlerFilterZtoA = () => {
+    setData(data.sort().reverse());
+  }
   return(
     <>
         <SearchBar pokemondata={pokemonData} setData={setData}/>
         <Stack direction="horizontal" gap={3} className="justify-content-center text-center my-1 mx-1">
             <PokemonCard data={data}/>
-            <PokemonTable pokemonData={data}/>
+            <PokemonTable pokemonData={data} handlerFilterAToZ={handlerFilterAToZ}  handlerFilterZtoA={handlerFilterZtoA}/>
         </Stack>
 
     </>

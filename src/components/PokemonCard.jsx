@@ -13,8 +13,6 @@ function PokemonCard({data}) {
   useEffect(() => {
         setFirstPokemon(data[0] === undefined ? cardDefault : data[0])
   }, [data]);
-  console.log("first Pokemon:",firstPokemon);
-  console.log("data [0}", data[0]);
   return(
     <Card
       bg="danger"

@@ -1,8 +1,9 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
 import {Card} from "react-bootstrap";
+import {FaSortAlphaDown} from "react-icons/fa";
+function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA}) {
 
-function PokemonTable({pokemonData}) {
   return (
     <Card
       bg="danger"
@@ -16,7 +17,7 @@ function PokemonTable({pokemonData}) {
           <tr>
             <th>Index</th>
             <th>Image</th>
-            <th>Name</th>
+            <th>Name <FaSortAlphaDown/> </th>
             <th>Types</th>
           </tr>
           </thead>
