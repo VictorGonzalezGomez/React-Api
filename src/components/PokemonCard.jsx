@@ -24,7 +24,7 @@ function PokemonCard({data}) {
       <Card.Header>#{firstPokemon.id} {firstPokemon.name}</Card.Header>
       <Card.Body>
         <Card.Img variant="top" src={firstPokemon.sprites.front_default}/>
-        <Card.Title> {firstPokemon.types.map((type, index) =>{
+        <Card.Title> Tipos: {firstPokemon.types.map((type, index) =>{
           return <li key={index}>{type.type.name}</li>
         })}</Card.Title>
         <Card.Text>

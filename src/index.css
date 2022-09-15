@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,6 +12,15 @@ code {
     monospace;
 }
 
-.scrollingContainer {
-  overflow-y: scroll;
+
+table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+tr {
+    width: 99.9%;
+    table-layout: fixed;
+    display: table;
 }

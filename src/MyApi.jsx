@@ -4,18 +4,12 @@ import { useState } from "react";
 
 const MyApi = () => {
   const [pokemonData, setPokemonData]=useState([]);
-  const [nextUrl, setNextUrl]=useState('');
-  const [prevUrl, setPrevUrl]=useState('');
-  const [loading, setLoading]=useState(true);
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=7'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
   useEffect(()=>{
     async function fetchData() {
       let response = await getAllPokemon(initialURL)
-      setNextUrl(response.next);
-      setPrevUrl(response.previous);
       await loadPokemon(response.results);
-      setLoading(false);
     }
     fetchData();
   }, [])
