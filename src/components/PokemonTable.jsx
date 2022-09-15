@@ -1,6 +1,6 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
-import {Card, Container} from "react-bootstrap";
+import {Card} from "react-bootstrap";
 
 function PokemonTable({pokemonData}) {
   return (
@@ -9,7 +9,7 @@ function PokemonTable({pokemonData}) {
       key="danger"
       text="dark"
       style={{width:'70rem'}}>
-      <Card.Header>#index name</Card.Header>
+      <Card.Header>Pokelist</Card.Header>
       <Card.Body>
         <Table responsive striped bordered hover variant="dark" style={{height:'100%'}}>
           <thead>
@@ -26,8 +26,8 @@ function PokemonTable({pokemonData}) {
               <td>#{pokemon.id}</td>
               <td><img src={pokemon.sprites.front_default}/></td>
               <td>{pokemon.name}</td>
-              <td>{pokemon.types.map(type =>{
-                return <li>{type.type.name}</li>
+              <td>{pokemon.types.map((type, index) =>{
+                return <li key={index}>{type.type.name}</li>
               })}</td>
             </tr>
           ))

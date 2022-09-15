@@ -26,7 +26,7 @@ function SearchBar({pokemondata, setData }){
 
             <DebounceInput
               element={Form.Control}
-              minLength={2}
+              minLength={1}
               debounceTimeout={600}
               type="text"
               placeholder="Search"

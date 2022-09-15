@@ -1,7 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Card} from "react-bootstrap";
-
-function PokemonCard({pokemons}) {
+const cardDefault = {
+  id:1000000,
+  name:"...",
+  sprites:{front_default:""},
+  types:[],
+  weight:"...",
+  height:"..."
+}
+function PokemonCard({data}) {
+  const [firstPokemon, setFirstPokemon]=useState(cardDefault)
+  useEffect(() => {
+        setFirstPokemon(data[0] === undefined ? cardDefault : data[0])
+  }, [data]);
+  console.log("first Pokemon:",firstPokemon);
+  console.log("data [0}", data[0]);
   return(
     <Card
       bg="danger"
@@ -10,19 +23,20 @@ function PokemonCard({pokemons}) {
       style={{ width: '18rem' }}
       className="mb-2"
     >
-      <Card.Header>#</Card.Header>
+      <Card.Header>#{firstPokemon.id} {firstPokemon.name}</Card.Header>
       <Card.Body>
-        <Card.Img variant="top" src=""/>
-        <Card.Title> Tipo:</Card.Title>
+        <Card.Img variant="top" src={firstPokemon.sprites.front_default}/>
+        <Card.Title> {firstPokemon.types.map((type, index) =>{
+          return <li key={index}>{type.type.name}</li>
+        })}</Card.Title>
         <Card.Text>
-          Peso:
+          Peso:{firstPokemon.weight}
         </Card.Text>
         <Card.Text>
-          Estatura:
+          Estatura:{firstPokemon.height}
         </Card.Text>
       </Card.Body>
     </Card>
   )
-
 }
 export default PokemonCard;

@@ -16,7 +16,7 @@ const PageContainer = ({pokemonData}) => {
     <>
         <SearchBar pokemondata={pokemonData} setData={setData}/>
         <Stack direction="horizontal" gap={3} className="justify-content-center text-center my-1 mx-1">
-            <PokemonCard/>
+            <PokemonCard data={data}/>
             <PokemonTable pokemonData={data}/>
         </Stack>
 
