@@ -1,8 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import PokemonTable from "./components/PokemonTable";
-
 
 const MyApi = () => {
   const [pokemonData, setPokemonData]=useState([]);
@@ -46,7 +44,7 @@ async function getAllPokemon(url) {
           })
   });
 }
-  console.log("pokeData:",pokemonData);
+
   return pokemonData;
 };
 export default MyApi;

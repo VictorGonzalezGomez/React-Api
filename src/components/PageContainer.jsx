@@ -1,12 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PokemonTable from "./PokemonTable";
 import PokemonCard from "./PokemonCard";
 import {Stack} from "react-bootstrap";
 import SearchBar from "./SearchBar";
 
 const PageContainer = ({pokemonData}) => {
-  const [data, setData]=useState(pokemonData);
-  console.log(data)
+  const [data, setData]=useState([]);
+  useEffect(() => {
+      setData(pokemonData)
+  }, [pokemonData]);
+
+  console.log("pokemonData",pokemonData)
+  console.log("data",data)
   return(
     <>
         <SearchBar pokemondata={pokemonData} setData={setData}/>
