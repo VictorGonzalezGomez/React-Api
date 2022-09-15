@@ -10,11 +10,21 @@ const PageContainer = ({pokemonData}) => {
       setData(pokemonData)
   }, [pokemonData]);
 
-  const handlerFilterAToZ = (data) => {
-    setData(data.sort());
+  const handlerFilterAToZ = () => {
+  const sortAZ = data.sort(function (a, b) {
+      if (a.name > b.name) return 1;
+      if (a.name < b.name) return -1;
+      return 0;
+    });
+    setData([...sortAZ]);
   }
   const handlerFilterZtoA = () => {
-    setData(data.sort().reverse());
+    const sortZA = data.sort(function (a, b) {
+      if (a.name < b.name) return 1;
+      if (a.name > b.name) return -1;
+      return 0;
+    });
+    setData([...sortZA]);
   }
   return(
     <>

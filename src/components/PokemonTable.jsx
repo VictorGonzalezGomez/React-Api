@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import Table from 'react-bootstrap/Table';
 import {Card} from "react-bootstrap";
-import {FaSortAlphaDown} from "react-icons/fa";
+import {FaSortAlphaDown, FaSortAlphaUpAlt} from "react-icons/fa";
 function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA}) {
+
+  const [isFilterAZ, setIsFilterAZ]= useState(true);
+const onHandleAZ = () => {
+  setIsFilterAZ(false)
+  handlerFilterAToZ();
+}
+const onHandleZA = () => {
+  setIsFilterAZ(true)
+  handlerFilterZtoA();
+}
 
   return (
     <Card
@@ -17,7 +27,7 @@ function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA}) {
           <tr>
             <th>Index</th>
             <th>Image</th>
-            <th>Name <FaSortAlphaDown/> </th>
+            <th>Name {isFilterAZ? <FaSortAlphaDown onClick={() => onHandleAZ()}/>: <FaSortAlphaUpAlt onClick={() => onHandleZA()}/>} </th>
             <th>Types</th>
           </tr>
           </thead>
