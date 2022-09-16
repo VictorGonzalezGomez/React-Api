@@ -72,7 +72,7 @@ function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA, handle
             {pokemonData.map((pokemon, index) => (
               <tr key={index}>
                 <td>#{pokemon.id}</td>
-                <td><img src={pokemon.sprites.front_default}/></td>
+                <td><img src={pokemon.sprites.front_default} alt={pokemon.name}/></td>
                 <td>{pokemon.name}</td>
               </tr>
             ))
