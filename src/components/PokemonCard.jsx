@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from "react";
 import {Badge, Card, ListGroup, ListGroupItem} from "react-bootstrap";
-import missingno from "../assets/js/images";
+import missingno from "../assets/img/MissingNO.webp"
 
 const cardDefault = {
   id:"??????",
   name:"MISSIGNO",
-  sprites:{front_default:missingno.img },
+  sprites:{front_default:missingno },
   types:[{slot:1,
   type: {name:"????"}}],
   weight:"10",
   height:"1"
 }
+
 function PokemonCard({data}) {
   const [firstPokemon, setFirstPokemon]=useState(cardDefault)
   useEffect(() => {
