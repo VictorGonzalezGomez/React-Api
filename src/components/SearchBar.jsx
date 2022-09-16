@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import Button from 'react-bootstrap/Button';
+import React from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -27,7 +26,7 @@ function SearchBar({pokemondata, setData }){
 
             <DebounceInput
               element={Form.Control}
-              minLength={1}
+              minLength={2}
               debounceTimeout={600}
               type="text"
               placeholder="Ingresa el nombre de un pokemon"
