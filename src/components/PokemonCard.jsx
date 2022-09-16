@@ -1,40 +1,52 @@
 import React, {useEffect, useState} from "react";
-import {Card} from "react-bootstrap";
+import {Badge, Card, ListGroup, ListGroupItem} from "react-bootstrap";
+import images from "../assets/js/images";
 const cardDefault = {
-  id:1000000,
-  name:"...",
-  sprites:{front_default:""},
-  types:[],
-  weight:"...",
-  height:"..."
+  id:"??????",
+  name:"MISSIGNO",
+  sprites:{front_default: images.missignno},
+  types:[{slot:1,
+  type: {name:"????"}}],
+  weight:"10",
+  height:"1"
 }
 function PokemonCard({data}) {
   const [firstPokemon, setFirstPokemon]=useState(cardDefault)
   useEffect(() => {
         setFirstPokemon(data[0] === undefined ? cardDefault : data[0])
   }, [data]);
-  return(
+  console.log(data)
+  return (
     <Card
       bg="danger"
       key="danger"
       text="dark"
-      style={{ width: '18rem' }}
+      style={{width: '18rem'}}
       className="mb-2"
     >
-      <Card.Header>#{firstPokemon.id} {firstPokemon.name}</Card.Header>
+      <Card.Header>
+        <Badge bg="primary">#{firstPokemon.id}</Badge>
+        <Badge bg="dark">{firstPokemon.name}</Badge>
+      </Card.Header>
       <Card.Body>
-        <Card.Img variant="top" src={firstPokemon.sprites.front_default}/>
-        <Card.Title> {firstPokemon.types.map((type, index) =>{
-          return <li key={index}>{type.type.name}</li>
-        })}</Card.Title>
-        <Card.Text>
-          Peso:{firstPokemon.weight}
-        </Card.Text>
-        <Card.Text>
-          Estatura:{firstPokemon.height}
-        </Card.Text>
+        <div className="nes-container is-dark">
+          <Card.Img variant="top" src={firstPokemon.sprites.front_default} className="customImgBg"/>
+        </div>
+
+        <ListGroup>
+          <ListGroupItem variant="dark"> Tipos: {firstPokemon.types.map((type, index) => {
+          return <Badge key={index}>{type.type.name}</Badge>
+        })}</ListGroupItem>
+          <ListGroupItem variant="primary">
+            Peso:{firstPokemon.weight}.
+          </ListGroupItem>
+          <ListGroupItem variant="success">
+            Estatura:{firstPokemon.height}.
+          </ListGroupItem>
+        </ListGroup>
+
       </Card.Body>
     </Card>
-  )
+  );
 }
 export default PokemonCard;

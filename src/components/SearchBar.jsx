@@ -12,8 +12,9 @@ function SearchBar({pokemondata, setData }){
   const search = (filter) => setData(pokemondata.filter((pokemon)=> { return pokemon.name.includes(filter)}));
 
   return(
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar expand="lg" bg="dark" variant="dark" className="nes-container is-dark">
       <Container fluid>
+        <i className="nes-pokeball"></i>
         <Navbar.Brand>Pokesearch</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -29,7 +30,7 @@ function SearchBar({pokemondata, setData }){
               minLength={1}
               debounceTimeout={600}
               type="text"
-              placeholder="Search"
+              placeholder="Ingresa el nombre de un pokemon"
               className="me-2"
               aria-label="Search"
               onChange={(e) => search(e.target.value)}

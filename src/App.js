@@ -1,13 +1,12 @@
-
 import "bootstrap/dist/css/bootstrap.min.css"
-import MyApi from "./MyApi";
-import PageContainer from "./components/PageContainer";
+import MyApi from "./components/MyApi";
+
 
 function App() {
-  const pokemonData = MyApi();
+
   return (
     <>
-      <PageContainer pokemonData={pokemonData}/>
+      <MyApi/>
     </>
   );
 }
