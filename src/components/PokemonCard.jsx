@@ -30,7 +30,7 @@ function PokemonCard({data}) {
       </Card.Header>
       <Card.Body>
         <div className="nes-container is-dark">
-          <Card.Img variant="top" src={firstPokemon.sprites.front_default} className="customImgBg"/>
+          <Card.Img variant="top" src={firstPokemon.sprites.front_default} alt={firstPokemon.name} className="customImgBg"/>
         </div>
 
         <ListGroup>
