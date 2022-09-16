@@ -25,6 +25,16 @@ code {
     align-items: center;
     text-align: center;
 }
+.customStickyTableHead{
+height: 26.5rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+tr {
+     width: 99.9%;
+     table-layout: fixed;
+     display: table;
+ }
 #customTable::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -42,12 +52,6 @@ code {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #F56D91;
     border: 0.15rem solid black;
-}
-
-tr {
-    width: 99.9%;
-    table-layout: fixed;
-    display: table;
 }
 
 .customImgBg{

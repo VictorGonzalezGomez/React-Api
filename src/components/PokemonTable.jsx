@@ -39,15 +39,10 @@ function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA, handle
         <Badge bg="dark">.</Badge>
         <Badge bg="warning">.</Badge>
         <Badge bg="success">.</Badge>
-       </Card.Header>
+      </Card.Header>
       <Card.Body>
-        <div style={{
-          height: ' 25rem',
-          overflow: 'scroll',
-          overflowX: 'hidden'
-        }}
-             id="customTable"
-        >
+
+        <div id="customTable" className="customStickyTableHead">
 
           <Table striped bordered hover variant="dark" bg="dark" className="nes-container">
             <thead className="text-center" style={{
@@ -86,8 +81,6 @@ function PokemonTable({pokemonData, handlerFilterAToZ, handlerFilterZtoA, handle
           </Table>
         </div>
       </Card.Body>
-
-
     </Card>
   );
 }
