@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {Badge, Card, ListGroup, ListGroupItem} from "react-bootstrap";
-import images from "../assets/js/images";
+import missingno from "../assets/js/images";
+
 const cardDefault = {
   id:"??????",
   name:"MISSIGNO",
-  sprites:{front_default: images.missignno},
+  sprites:{front_default:missingno.img },
   types:[{slot:1,
   type: {name:"????"}}],
   weight:"10",

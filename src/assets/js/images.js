@@ -1,3 +1,5 @@
 import Missingno from "../img/MissingNO.webp"
 
-export default {"missignno":Missingno}
+const missingno = {img: Missingno};
+
+export default missingno;
