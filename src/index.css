@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,16 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-table {
+#root{
     display: flex;
-    flex-flow: column;
-    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.customLoadingScreen{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#customTable::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #30475E;
+}
+
+#customTable::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #dc3545;
+}
+
+#customTable::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #F56D91;
+    border: 0.15rem solid black;
 }
 
 tr {
     width: 99.9%;
     table-layout: fixed;
     display: table;
+}
+
+.customImgBg{
+    background-color: #F7F5F2;
 }
