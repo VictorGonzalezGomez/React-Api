@@ -2,10 +2,11 @@ import React, {useEffect, useState} from "react";
 import {Badge, Card, ListGroup, ListGroupItem} from "react-bootstrap";
 import missingno from "../assets/img/MissingNO.webp"
 
+const imgMissingno = missingno;
 const cardDefault = {
   id:"??????",
   name:"MISSIGNO",
-  sprites:{front_default:missingno },
+  sprites:{front_default:imgMissingno},
   types:[{slot:1,
   type: {name:"????"}}],
   weight:"10",
