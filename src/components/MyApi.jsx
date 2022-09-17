@@ -14,17 +14,17 @@ const MyApi = () => {
       await loadPokemon(response.results);
       setLoading(false);
     }
+    const loadPokemon = async (data) => {
+      let _pokemonData = await Promise.all(data.map(async pokemon => {
+        let pokemonRecord = await getPokemon(pokemon);
+        return pokemonRecord
+      }))
+      setPokemonData(_pokemonData);
+    }
     fetchData();
   }, [])
 
-  const loadPokemon = async (data) => {
-    let _pokemonData = await Promise.all(data.map(async pokemon => {
-      let pokemonRecord = await getPokemon(pokemon);
-      return pokemonRecord
-    }))
-    setPokemonData(_pokemonData);
-  }
-  
+
  async function getPokemon({ url }) {
   return new Promise((resolve, reject) => {
       fetch(url).then(res => res.json())
