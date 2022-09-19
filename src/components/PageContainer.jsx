@@ -12,36 +12,36 @@ const PageContainer = ({pokemonData}) => {
   }, [pokemonData]);
 
   const handlerFilterAToZ = () => {
-  const sortAZ = data.sort(function (a, b) {
-      if (a.name > b.name) return 1;
-      if (a.name < b.name) return -1;
+  const sortData= data.sort(function (a, z) {
+      if (a.name > z.name) return 1;
+      if (a.name < z.name) return -1;
       return 0;
     });
-    setData([...sortAZ]);
+    setData([...sortData]);
   }
   const handlerFilterZtoA = () => {
-    const sortZA = data.sort(function (a, b) {
-      if (a.name < b.name) return 1;
-      if (a.name > b.name) return -1;
+    const sortData = data.sort(function (a, z) {
+      if (a.name < z.name) return 1;
+      if (a.name > z.name) return -1;
       return 0;
     });
-    setData([...sortZA]);
+    setData([...sortData]);
   }
   const handlerFilter1To9 = () => {
-  const sortAZ = data.sort(function (a, b) {
-      if (a.id > b.id) return 1;
-      if (a.id < b.id) return -1;
+  const sortData = data.sort(function (one, nine) {
+      if (one.id > nine.id) return 1;
+      if (one.id < nine.id) return -1;
       return 0;
     });
-    setData([...sortAZ]);
+    setData([...sortData]);
   }
   const handlerFilter9to1 = () => {
-    const sortZA = data.sort(function (a, b) {
+    const sortData = data.sort(function (a, b) {
       if (a.id < b.id) return 1;
       if (a.id > b.id) return -1;
       return 0;
     });
-    setData([...sortZA]);
+    setData([...sortData]);
   }
   return(
     <>
